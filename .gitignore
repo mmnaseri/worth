@@ -1,0 +1,14 @@
+# IDEA files
+
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# Junk from Maven
+
+*/target
+
+# Junk from MacOS
+
+.DS_Store
