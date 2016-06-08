@@ -11,6 +11,7 @@
         <module>../worth-parent</module>
         <module>../worth-core</module>
         <module>../worth-web</module>
+        <module>../worth-domain</module>
     </modules>
 
 
