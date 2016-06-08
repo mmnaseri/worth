@@ -1,11 +1,12 @@
 package com.mmnaseri.apps.worth.domain.tx;
 
+import com.mmnaseri.apps.worth.domain.access.Tracker;
 import com.mmnaseri.apps.worth.domain.account.Account;
 import com.mmnaseri.apps.worth.domain.taxonomy.Tag;
-import com.mmnaseri.apps.worth.domain.access.Tracker;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -26,6 +27,8 @@ public abstract class Transaction {
     private Transaction reference;
     private Status status;
     private Date date;
+    @DBRef
+    private List<Attribution> attributions;
 
     public Tracker getTracker() {
         return tracker;
@@ -89,6 +92,15 @@ public abstract class Transaction {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public List<Attribution> getAttributions() {
+        return attributions;
+    }
+
+    public Transaction setAttributions(List<Attribution> attributions) {
+        this.attributions = attributions;
+        return this;
     }
 
 }
